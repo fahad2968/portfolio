@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio of Fahad Bin Ali — Web Developer and Science Student from Dhaka, Bangladesh.">
+  <title>Fahad Bin Ali | Home</title>
+
+  <!-- Google Font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ===================================================================
+       COMMON NAVIGATION BAR (সব পেজে একই থাকবে)
+       =================================================================== -->
+  <header class="site-header">
+    <div class="container navbar">
+      <!-- EDIT HERE: তোমার লোগো বা নাম -->
+      <a href="index.html" class="logo">Fahad<span>.</span></a>
+
+      <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+
+      <nav aria-label="Main Navigation">
+        <ul id="navLinks" class="nav-links">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- =================================================================
+         HERO SECTION
+         ================================================================= -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <!-- EDIT HERE: ছোট ট্যাগলাইন -->
+          <span class="hero-tag">Web Developer &amp; Science Student</span>
+
+          <h1 class="hero-title">Hi, I'm <span>Fahad Bin Ali</span></h1>
+
+          <!-- EDIT HERE: তোমার সংক্ষিপ্ত পরিচিতি -->
+          <p class="hero-desc">
+            I am a Class 12 Science student at Dhaka City College and a passionate web developer based in Mirpur, Dhaka. I build clean, responsive websites, WordPress e-commerce platforms, and custom web tools using HTML, CSS, JavaScript, and PHP.
+          </p>
+
+          <div class="hero-actions">
+            <!-- Internal Links -->
+            <a href="projects.html" class="btn btn-primary">View My Projects</a>
+            <a href="contact.html" class="btn btn-outline">Contact Me</a>
+            <!-- EDIT HERE: নিচের href-এ তোমার নিজের GitHub লিংক বসাও (External Link) -->
+            <a href="https://github.com/fahadbinali" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub Profile ↗</a>
+          </div>
+        </div>
+
+        <div class="hero-image-box">
+          <!-- EDIT HERE: images ফোল্ডারে তোমার ছবি রেখে নাম profile.jpg দাও -->
+          <img src="images/profile.jpg" alt="Portrait of Fahad Bin Ali" class="hero-photo">
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         QUICK HIGHLIGHTS SECTION
+         ================================================================= -->
+    <section class="section">
+      <div class="container">
+        <div class="highlight-grid">
+          <div class="highlight-card">
+            <div class="highlight-num">10+</div>
+            <h3>Web &amp; Tech Projects</h3>
+            <p class="card-text">Built custom web apps, client e-commerce sites, and student utility tools from scratch.</p>
+          </div>
+
+          <div class="highlight-card">
+            <div class="highlight-num">4+</div>
+            <h3>Core Tech Areas</h3>
+            <p class="card-text">Hands-on experience across Frontend Web, PHP/MySQL, WordPress/WooCommerce, and cPanel hosting.</p>
+          </div>
+
+          <div class="highlight-card">
+            <div class="highlight-num">Dhaka</div>
+            <h3>Digital Partner</h3>
+            <p class="card-text">Working on web development and digital solutions alongside HSC Science preparation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         WHAT I DO SECTION
+         ================================================================= -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">What I Focus On</h2>
+          <p class="section-subtitle">
+            Combining structured academic learning with practical client and personal development work.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3 class="card-title">Frontend Web Development</h3>
+            <p class="card-text">
+              Writing semantic HTML5, modern CSS3 layouts (Flexbox &amp; Grid), and clean JavaScript for fast, mobile-friendly user interfaces.
+            </p>
+            <div class="skill-tags">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">WordPress &amp; E-Commerce</h3>
+            <p class="card-text">
+              Setting up business websites and WooCommerce stores with Elementor, WoodMart, custom inquiry workflows, and cPanel management.
+            </p>
+            <div class="skill-tags">
+              <span class="tag">WordPress</span>
+              <span class="tag">WooCommerce</span>
+              <span class="tag">cPanel</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">Custom Web Tools &amp; Backend</h3>
+            <p class="card-text">
+              Developing lightweight PHP &amp; MySQL web apps, study trackers, and experimenting with AI API integrations for everyday problems.
+            </p>
+            <div class="skill-tags">
+              <span class="tag">PHP</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">Python</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         FEATURED PROJECTS PREVIEW
+         ================================================================= -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Featured Work</h2>
+          <p class="section-subtitle">
+            A quick look at some recent websites and applications I have worked on.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="project-meta">E-Commerce / WordPress</div>
+            <h3 class="card-title">CardBox BD</h3>
+            <p class="card-text">
+              Product catalog website built with WordPress and WoodMart featuring a direct WhatsApp inquiry workflow tailored for B2B buyers.
+            </p>
+            <a href="https://cardboxbd.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Visit Website ↗</a>
+          </article>
+
+          <article class="card">
+            <div class="project-meta">PHP &amp; MySQL App</div>
+            <h3 class="card-title">Alapp Messenger</h3>
+            <p class="card-text">
+              A custom web-based messaging application built with PHP, MySQL, and real-time voice/video calling integration hosted on cPanel.
+            </p>
+            <a href="projects.html" class="btn btn-outline btn-sm">View Details →</a>
+          </article>
+
+          <article class="card">
+            <div class="project-meta">Online Store</div>
+            <h3 class="card-title">Pulack Fashion House</h3>
+            <p class="card-text">
+              Full WooCommerce online clothing storefront with structured product catalog management and responsive shopping layouts.
+            </p>
+            <a href="https://pulack.shop" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Visit Website ↗</a>
+          </article>
+        </div>
+
+        <div style="margin-top: 30px;">
+          <a href="projects.html" class="btn btn-primary">Explore All Projects →</a>
+          <a href="about.html" class="btn btn-outline" style="margin-left: 10px;">More About Me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================================================================
+       COMMON FOOTER (সব পেজে একই থাকবে)
+       =================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>&copy; <span id="currentYear">2026</span> Fahad Bin Ali. Built with HTML, CSS &amp; JavaScript.</p>
+
+      <!-- EDIT HERE: তোমার আসল সোশ্যাল লিংকগুলো বসিয়ে দিও -->
+      <div class="social-links">
+        <a href="https://github.com/fahadbinali" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://sultanaacademy.com" target="_blank" rel="noopener noreferrer">Sultana Academy</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>

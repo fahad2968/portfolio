@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Web development projects, custom tools, and achievements of Fahad Bin Ali.">
+  <title>Fahad Bin Ali | Projects &amp; Achievements</title>
+
+  <!-- Google Font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ===================================================================
+       COMMON NAVIGATION BAR
+       =================================================================== -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="logo">Fahad<span>.</span></a>
+
+      <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+
+      <nav aria-label="Main Navigation">
+        <ul id="navLinks" class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="projects.html" class="nav-link active">Projects</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- =================================================================
+         PAGE BANNER
+         ================================================================= -->
+    <section class="page-banner">
+      <div class="container">
+        <h1>Projects &amp; Achievements</h1>
+        <p>Selected websites, web applications, study tools, and milestones I have completed so far.</p>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         FILTERABLE PROJECTS SHOWCASE (JS-Powered)
+         ================================================================= -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">
+            Use the category buttons below to filter projects by type.
+          </p>
+        </div>
+
+        <!-- Filter Buttons (Connected to js/script.js) -->
+        <div class="filter-bar" role="group" aria-label="Project Category Filter">
+          <button type="button" class="filter-btn active" data-filter="all">All Projects</button>
+          <button type="button" class="filter-btn" data-filter="ecommerce">E-Commerce &amp; CMS</button>
+          <button type="button" class="filter-btn" data-filter="webapp">Web Apps</button>
+          <button type="button" class="filter-btn" data-filter="tools">Student Tools</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+
+          <!-- Project 1 -->
+          <article class="project-card" data-category="ecommerce">
+            <!-- EDIT HERE: images ফোল্ডারে স্ক্রিনশট রেখে নাম project-cardbox.jpg দাও -->
+            <img src="images/project-cardbox.jpg" alt="CardBox BD Website Preview" class="project-thumb">
+            <div class="project-body">
+              <span class="project-meta">E-Commerce / WordPress</span>
+              <h3 class="card-title">CardBox BD</h3>
+              <p class="card-text">
+                B2B product showcase built with WordPress and WoodMart theme. Customized to replace direct cart checkout with a streamlined WhatsApp inquiry system.
+              </p>
+              <div class="skill-tags">
+                <span class="tag">WordPress</span>
+                <span class="tag">WoodMart</span>
+                <span class="tag">Elementor</span>
+              </div>
+              <div class="project-links">
+                <a href="https://cardboxbd.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Live Site ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card" data-category="webapp">
+            <!-- EDIT HERE: images ফোল্ডারে project-alapp.jpg রাখো -->
+            <img src="images/project-alapp.jpg" alt="Alapp Messenger Web App Preview" class="project-thumb">
+            <div class="project-body">
+              <span class="project-meta">Full-Stack Web App</span>
+              <h3 class="card-title">Alapp Messenger</h3>
+              <p class="card-text">
+                Custom web-based messaging platform built using PHP and MySQL, featuring real-time chat and ZegoCloud voice/video calling deployed on cPanel hosting.
+              </p>
+              <div class="skill-tags">
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">ZegoCloud</span>
+              </div>
+              <div class="project-links">
+                <!-- EDIT HERE: তোমার GitHub রিপোজিটরি লিংক বসাও -->
+                <a href="https://github.com/fahadbinali" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card" data-category="ecommerce">
+            <!-- EDIT HERE: images ফোল্ডারে project-pulack.jpg রাখো -->
+            <img src="images/project-pulack.jpg" alt="Pulack Fashion House Storefront Preview" class="project-thumb">
+            <div class="project-body">
+              <span class="project-meta">WooCommerce Store</span>
+              <h3 class="card-title">Pulack Fashion House</h3>
+              <p class="card-text">
+                Complete online fashion store featuring organized product categories, responsive mobile shopping layout, and ongoing WooCommerce catalog management.
+              </p>
+              <div class="skill-tags">
+                <span class="tag">WooCommerce</span>
+                <span class="tag">Elementor</span>
+                <span class="tag">cPanel</span>
+              </div>
+              <div class="project-links">
+                <a href="https://pulack.shop" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Live Site ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card" data-category="tools">
+            <!-- EDIT HERE: images ফোল্ডারে project-tracker.jpg রাখো -->
+            <img src="images/project-tracker.jpg" alt="HSC Syllabus & Study Tracker Interface" class="project-thumb">
+            <div class="project-body">
+              <span class="project-meta">Productivity Web Tool</span>
+              <h3 class="card-title">HSC Syllabus Tracker</h3>
+              <p class="card-text">
+                A clean dark-themed study tracker designed for HSC Science students to monitor chapter completion, exam countdowns, and daily focused study hours.
+              </p>
+              <div class="skill-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/fahadbinali" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5 -->
+          <article class="project-card" data-category="tools">
+            <!-- EDIT HERE: images ফোল্ডারে project-porteboy.jpg রাখো -->
+            <img src="images/project-porteboy.jpg" alt="PORTE BOY Flip Clock Study Timer" class="project-thumb">
+            <div class="project-body">
+              <span class="project-meta">Study Timer App</span>
+              <h3 class="card-title">PORTE BOY</h3>
+              <p class="card-text">
+                A distraction-free Pomodoro flip-clock timer and daily task planner conceptualized and built for deep-focus study sessions.
+              </p>
+              <div class="skill-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JS Timer</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/fahadbinali" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6 -->
+          <article class="project-card" data-category="webapp">
+            <!-- EDIT HERE: images ফোল্ডারে project-aiweb.jpg রাখো -->
+            <img src="images/project-aiweb.jpg" alt="Prompt to Website Generator App" class="project-thumb">
+            <div class="project-body">
+              <span class="project-meta">AI Web Application</span>
+              <h3 class="card-title">Prompt-to-Site Builder</h3>
+              <p class="card-text">
+                An experimental conversational web builder powered by LLM APIs that generates and previews structured web pages directly from user prompts.
+              </p>
+              <div class="skill-tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">REST API</span>
+                <span class="tag">HTML/CSS</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/fahadbinali" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub ↗</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         PROJECT SUMMARY TABLE (Assignment Requirement: Table)
+         ================================================================= -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Project Overview Table</h2>
+          <p class="section-subtitle">
+            Quick comparison of the technologies and roles involved in each project.
+          </p>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Project Name</th>
+                <th>Category</th>
+                <th>Technologies Used</th>
+                <th>Key Highlight</th>
+                <th>Year</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>CardBox BD</strong></td>
+                <td>E-Commerce / CMS</td>
+                <td>WordPress, WoodMart, Elementor</td>
+                <td>Custom WhatsApp B2B inquiry flow</td>
+                <td>2026</td>
+              </tr>
+              <tr>
+                <td><strong>Alapp Messenger</strong></td>
+                <td>Web App</td>
+                <td>PHP, MySQL, ZegoCloud, cPanel</td>
+                <td>Real-time messaging &amp; calling</td>
+                <td>2025</td>
+              </tr>
+              <tr>
+                <td><strong>Pulack Fashion House</strong></td>
+                <td>E-Commerce / CMS</td>
+                <td>WordPress, WooCommerce</td>
+                <td>Full clothing catalog &amp; store management</td>
+                <td>2025 – 2026</td>
+              </tr>
+              <tr>
+                <td><strong>HSC Syllabus Tracker</strong></td>
+                <td>Student Tool</td>
+                <td>HTML5, CSS3, JavaScript</td>
+                <td>Countdown &amp; chapter progress tracking</td>
+                <td>2026</td>
+              </tr>
+              <tr>
+                <td><strong>PORTE BOY</strong></td>
+                <td>Student Tool</td>
+                <td>HTML5, CSS3, Vanilla JS</td>
+                <td>Flip-clock Pomodoro &amp; task tracker</td>
+                <td>2026</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+         ACHIEVEMENTS & ACTIVITIES SECTION
+         ================================================================= -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Achievements &amp; Milestones</h2>
+          <p class="section-subtitle">
+            Key events, certifications, and practical experiences outside regular coursework.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3 class="card-title">Event &amp; Industry Contributions</h3>
+            <ul class="custom-ul">
+              <li>
+                <strong>Digital Partner — International Chess Tournament (2026):</strong> Served as Digital Partner under Sultana IT for <em>Anjon's International Rapid Rating Chess Tournament 2026</em> held at the Bangladesh Chess Federation.
+              </li>
+              <li>
+                <strong>Live Client Deployments:</strong> Designed, configured, and delivered production business websites including CardBox BD and Pulack Fashion House.
+              </li>
+              <li>
+                <strong>Sultana Academy &amp; IT Operations:</strong> Actively manage web development, hosting infrastructure, and digital media workflows in Dhaka.
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 class="card-title">Courses &amp; Personal Milestones</h3>
+            <ul class="custom-ul">
+              <li>
+                <strong>Deep Focus Certification (August 2026):</strong> Completed the <em>Deep Focus: Study &amp; Work Session Protocol</em> micro-course to build structured daily study habits.
+              </li>
+              <li>
+                <strong>Full-Stack Hosting Milestone:</strong> Independently deployed and maintained a database-driven PHP messaging web app on live cPanel servers.
+              </li>
+              <li>
+                <strong>Academic Foundation:</strong> Completed SSC (Science) in 2025 from Adamjee Cantonment Public School and currently pursuing HSC at Dhaka City College.
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================================================================
+       COMMON FOOTER
+       =================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>&copy; <span id="currentYear">2026</span> Fahad Bin Ali. Built with HTML, CSS &amp; JavaScript.</p>
+
+      <div class="social-links">
+        <a href="https://github.com/fahadbinali" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://sultanaacademy.com" target="_blank" rel="noopener noreferrer">Sultana Academy</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>
