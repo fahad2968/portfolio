@@ -1,0 +1,152 @@
+/* ==========================================================================
+   Personal Portfolio - Responsive Stylesheet
+   Author: Fahad Bin Ali
+   ========================================================================== */
+
+/* ট্যাবলেট ও ছোট ল্যাপটপ স্ক্রিন (৯৯২ পিক্সেল বা তার নিচে) */
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .hero-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-image-box {
+    order: -1; /* ছোট স্ক্রিনে ছবিটা ওপরে দেখাবে */
+  }
+
+  .hero-photo {
+    width: 240px;
+    height: 240px;
+  }
+
+  .grid-3,
+  .projects-grid,
+  .highlight-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* মোবাইল স্ক্রিন (৭৬৮ পিক্সেল বা তার নিচে) */
+@media (max-width: 768px) {
+  .section {
+    padding: 52px 0;
+  }
+
+  .hero {
+    padding: 48px 0;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.55rem;
+  }
+
+  .page-banner {
+    padding: 36px 0;
+  }
+
+  .page-banner h1 {
+    font-size: 1.75rem;
+  }
+
+  /* মোবাইল নেভিগেশন মেনু */
+  .menu-toggle {
+    display: inline-block;
+  }
+
+  .navbar {
+    position: relative;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 12px 20px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 12px 4px;
+    border-bottom: none;
+  }
+
+  /* সব গ্রিড ১ কলামে চলে আসবে */
+  .grid-2,
+  .grid-3,
+  .projects-grid,
+  .highlight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* খুব ছোট মোবাইল স্ক্রিন (৪৮০ পিক্সেল বা তার নিচে) */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-photo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .contact-form,
+  .card {
+    padding: 20px;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 10px 12px;
+    font-size: 0.88rem;
+  }
+}

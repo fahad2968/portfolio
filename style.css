@@ -1,0 +1,715 @@
+/* ==========================================================================
+   Personal Portfolio - Main Stylesheet
+   Author: Fahad Bin Ali
+   Note: কালার বা ফন্ট বদলাতে চাইলে নিচের :root অংশটি পরিবর্তন করলেই পুরো সাইট বদলে যাবে।
+   ========================================================================== */
+
+:root {
+  /* রঙের সেটিংস (সহজেই পরিবর্তনযোগ্য) */
+  --primary-color: #0f766e;       /* মূল অ্যাকসেন্ট কালার (Deep Teal) */
+  --primary-hover: #115e59;       /* হোভার কালার */
+  --primary-light: #f0fdfa;       /* হালকা ব্যাকগ্রাউন্ড টিন্ট */
+
+  --bg-body: #f8fafc;             /* পুরো পেজের ব্যাকগ্রাউন্ড */
+  --bg-surface: #ffffff;          /* কার্ড ও সেকশনের ব্যাকগ্রাউন্ড */
+  --bg-alt: #f1f5f9;              /* আলাদা সেকশন বোঝানোর ব্যাকগ্রাউন্ড */
+
+  --text-main: #0f172a;           /* হেডিং ও প্রধান লেখা */
+  --text-body: #334155;           /* সাধারণ প্যারাগ্রাফ */
+  --text-muted: #64748b;          /* হালকা বা সেকেন্ডারি লেখা */
+
+  --border-color: #e2e8f0;        /* হালকা বর্ডার */
+  --error-color: #dc2626;         /* ফর্ম এরর কালার */
+  --success-color: #15803d;       /* ফর্ম সাকসেস কালার */
+
+  /* ফন্ট ও সাইজিং */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --container-width: 1100px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --transition: all 0.25s ease;
+}
+
+/* বেসিক রিসেট */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-body);
+  color: var(--text-body);
+  line-height: 1.65;
+  font-size: 16px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+h1, h2, h3, h4 {
+  color: var(--text-main);
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   লেআউট ও কমন ক্লাস
+   ========================================================================== */
+.container {
+  width: 92%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 72px 0;
+}
+
+.section-alt {
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.section-header {
+  margin-bottom: 36px;
+}
+
+.section-title {
+  font-size: 1.85rem;
+  margin-bottom: 8px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  background-color: var(--primary-color);
+  margin-top: 8px;
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+  max-width: 650px;
+}
+
+/* গ্রিড সিস্টেম */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ==========================================================================
+   নেভিগেশন বার (সব পেজের জন্য কমন)
+   ========================================================================== */
+.site-header {
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+}
+
+.logo span {
+  color: var(--primary-color);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-link {
+  color: var(--text-body);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+/* মোবাইল মেনু বাটন (ডেস্কটপে লুকানো থাকবে) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--text-main);
+}
+
+/* ==========================================================================
+   বাটন স্টাইল
+   ========================================================================== */
+.btn {
+  display: inline-block;
+  padding: 11px 22px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  color: #ffffff;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-main);
+  border-color: var(--border-color);
+}
+
+.btn-outline:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  background-color: var(--primary-light);
+}
+
+.btn-sm {
+  padding: 7px 14px;
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   হোম পেজ: হিরো সেকশন ও হাইলাইটস
+   ========================================================================== */
+.hero {
+  padding: 75px 0 65px;
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-tag {
+  display: inline-block;
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccfbf1;
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  font-size: 2.6rem;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.hero-title span {
+  color: var(--primary-color);
+}
+
+.hero-desc {
+  font-size: 1.05rem;
+  color: var(--text-body);
+  margin-bottom: 28px;
+  max-width: 560px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.hero-image-box {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-photo {
+  width: 310px;
+  height: 310px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 4px solid var(--bg-surface);
+  box-shadow: var(--shadow-md);
+  outline: 1px solid var(--border-color);
+  background-color: var(--bg-alt);
+}
+
+/* হাইলাইট কার্ডস */
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 20px;
+}
+
+.highlight-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.highlight-num {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: 4px;
+}
+
+/* ==========================================================================
+   সাব-পেজ ব্যানার (About, Projects, Contact পেজের ওপরে)
+   ========================================================================== */
+.page-banner {
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+  padding: 46px 0;
+}
+
+.page-banner h1 {
+  font-size: 2.1rem;
+  margin-bottom: 8px;
+}
+
+.page-banner p {
+  color: var(--text-muted);
+  max-width: 640px;
+}
+
+/* ==========================================================================
+   কার্ড, লিস্ট ও স্কিল ট্যাগ
+   ========================================================================== */
+.card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 26px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: #cbd5e1;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  color: var(--text-body);
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+}
+
+/* কাস্টম Unordered ও Ordered List */
+.custom-ul,
+.custom-ol {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.custom-ul li,
+.custom-ol li {
+  margin-bottom: 10px;
+  color: var(--text-body);
+}
+
+.custom-ul li strong,
+.custom-ol li strong {
+  color: var(--text-main);
+}
+
+/* স্কিল ট্যাগস */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.tag {
+  background-color: var(--bg-alt);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   টেবিল স্টাইল (Education ও Project Summary-এর জন্য)
+   ========================================================================== */
+.table-wrapper {
+  overflow-x: auto;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.data-table thead {
+  background-color: var(--bg-alt);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.data-table th,
+.data-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.data-table th {
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table tbody tr:hover {
+  background-color: var(--primary-light);
+}
+
+/* ==========================================================================
+   প্রজেক্ট পেজ: ফিল্টার বার, প্রজেক্ট কার্ড ও অর্জন
+   ========================================================================== */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.filter-btn {
+  padding: 8px 18px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-btn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.filter-btn.active {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border-color: var(--primary-color);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.project-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.project-card.hidden {
+  display: none;
+}
+
+.project-thumb {
+  width: 100%;
+  height: 185px;
+  object-fit: cover;
+  background-color: var(--bg-alt);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.project-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-meta {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.project-links {
+  margin-top: auto;
+  padding-top: 14px;
+  display: flex;
+  gap: 12px;
+}
+
+/* ==========================================================================
+   কন্টাক্ট পেজ ও ফর্ম স্টাইল
+   ========================================================================== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.3fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.info-list {
+  list-style: none;
+  margin-top: 18px;
+}
+
+.info-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.95rem;
+}
+
+.info-list li:last-child {
+  border-bottom: none;
+}
+
+.contact-form {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 30px;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-label {
+  display: block;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  font-size: 0.92rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  background-color: #ffffff;
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 115px;
+}
+
+.option-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 6px;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.92rem;
+  cursor: pointer;
+}
+
+.error-msg {
+  color: var(--error-color);
+  font-size: 0.82rem;
+  margin-top: 5px;
+  display: block;
+  min-height: 16px;
+}
+
+.form-status {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.92rem;
+  font-weight: 500;
+  display: none;
+}
+
+.form-status.success {
+  display: block;
+  background-color: #dcfce7;
+  color: var(--success-color);
+  border: 1px solid #bbf7d0;
+}
+
+.form-status.error {
+  display: block;
+  background-color: #fee2e2;
+  color: var(--error-color);
+  border: 1px solid #fecaca;
+}
+
+/* ==========================================================================
+   ফুটার ও ব্যাক-টু-টপ বাটন
+   ========================================================================== */
+.site-footer {
+  background-color: var(--text-main);
+  color: #cbd5e1;
+  padding: 36px 0;
+  margin-top: 40px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.9rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 18px;
+}
+
+.social-links a {
+  color: #cbd5e1;
+}
+
+.social-links a:hover {
+  color: #ffffff;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+  z-index: 99;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background-color: var(--primary-hover);
+}
